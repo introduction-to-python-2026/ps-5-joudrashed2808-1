@@ -37,19 +37,7 @@ def split_at_digit(formula):
     
     number_part = formula[number_start_index:]
     return prefix, int(number_part)
-
-def count_atoms_in_molecule(molecular_formula):
-    atom_counts = {}
     
-    element_chunks = split_before_uppercases(molecular_formula)
-    
-    for chunk in element_chunks:
-        element, count = split_at_digit(chunk)
-        
-        atom_counts[element] = atom_counts.get(element, 0) + count
-        
-    return atom_counts
-
 def count_atoms_in_molecule(molecular_formula):
     atom_counts = {}
     chunks = split_before_uppercases(molecular_formula)
